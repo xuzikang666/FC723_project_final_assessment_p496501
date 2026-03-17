@@ -49,15 +49,9 @@ def show_status():
     for seat, status in seats.items():
         print(seat, status)
         
-def cancel_booking():
-    seat = input("please enter the seat number: ")
-    if seat in seats:
-        if seats[seat] == "Received":
-            print("seat has been cancelled")
-        else:
-            print("seat don't be booked")
-    else:
-        print("number is wrong")
+def show_number_of_free_seats():
+    count = list(seats.values()).count("Free")
+    print("number of free seats:", count)
         
 while True:
     print("choose aseat system")
@@ -66,7 +60,7 @@ while True:
     print("3.free seat")
     print("4.show seat status")
     print("5.exit")
-    print("6.cancel seat")
+    print("6.show free seats")
     
     choice = input("choose a number: ")
     if choice == "1":
@@ -80,7 +74,7 @@ while True:
     elif choice == "5":
         break
     elif choice == "6":
-        cancel_booking()
+        show_number_of_free_seats()
     else:
         print("Wrong input")
         
