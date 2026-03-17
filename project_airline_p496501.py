@@ -6,11 +6,11 @@ Created on Sun Mar 15 23:06:05 2026
 @author: xuzikang
 """
 
-
+# create the dictionary of seats
 rows = 80
 column = ["A","B","C","D","E","F"]
 seats = {}
-
+# make a range from rows and columns, which limit the range of seats that customers can choose
 for r in range(1, rows+1):
     for c in column:
         seats[str(r)+c] = "Free"
@@ -52,7 +52,7 @@ def show_status():
 def show_number_of_free_seats():
     count = list(seats.values()).count("Free")
     print("number of free seats:", count)
-        
+# cycle operation, and create the menu        
 while True:
     print("choose aseat system")
     print("1.check seat")
@@ -61,7 +61,7 @@ while True:
     print("4.show seat status")
     print("5.exit")
     print("6.show free seats")
-    
+# define each number in the menu
     choice = input("choose a number: ")
     if choice == "1":
         check_seat()
