@@ -5,6 +5,7 @@ Created on Sun Mar 15 23:06:05 2026
 
 @author: xuzikang
 """
+import random
 
 # create the dictionary of seats
 rows = 80
@@ -14,6 +15,19 @@ seats = {}
 for r in range(1, rows+1):
     for c in column:
         seats[str(r)+c] = "Free"
+# store the refferences that have been used
+used_references = set()
+
+
+def get_reference():
+    references = ""
+    word_number = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+    for i in range(8):
+        references += random.choice(word_number)
+        
+    if references not in used_references:
+        used_references.add(references)
+        return references
  
 def check_seat():
     seat = input("please enter the seat number: ")
