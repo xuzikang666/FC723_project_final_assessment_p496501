@@ -122,8 +122,13 @@ def show_status():
 
 # show free seats' number
 def show_number_of_free_seats():
-    count = list(seats.values()).count("Free")
-    print("number of free seats:", count)
+    count = 0
+    
+    for s in seats:
+        if seats[s] == "Free":
+            count = count + 1
+    
+    print("Free seats:", count)
 
 # cycle operation, and create the menu        
 while True:
